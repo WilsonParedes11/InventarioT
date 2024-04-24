@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">Edit Customer</h4>
+                        <h4 class="card-title">Editar Cliente</h4>
                     </div>
                 </div>
 
@@ -15,7 +15,7 @@
                     <form action="{{ route('customers.update', $customer->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('put')
-                        <!-- begin: Input Image -->
+                        <!-- Inicio: Entrada de Imagen -->
                         <div class="form-group row align-items-center">
                             <div class="col-md-12">
                                 <div class="profile-img-edit">
@@ -30,7 +30,7 @@
                             <div class="input-group mb-4 col-lg-6">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input @error('photo') is-invalid @enderror" id="image" name="photo" accept="image/*" onchange="previewImage();">
-                                    <label class="custom-file-label" for="photo">Choose file</label>
+                                    <label class="custom-file-label" for="photo">Seleccionar archivo</label>
                                 </div>
                                 @error('photo')
                                 <div class="invalid-feedback">
@@ -39,11 +39,11 @@
                                 @enderror
                             </div>
                         </div>
-                        <!-- end: Input Image -->
-                        <!-- begin: Input Data -->
+                        <!-- Fin: Entrada de Imagen -->
+                        <!-- Inicio: Datos de Entrada -->
                         <div class=" row align-items-center">
                             <div class="form-group col-md-6">
-                                <label for="name">Customer Name <span class="text-danger">*</span></label>
+                                <label for="name">Nombre del Cliente <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $customer->name) }}" required>
                                 @error('name')
                                 <div class="invalid-feedback">
@@ -52,7 +52,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="shopname">Shop Name <span class="text-danger">*</span></label>
+                                <label for="shopname">Nombre de la Tienda <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('shopname') is-invalid @enderror" id="shopname" name="shopname" value="{{ old('shopname', $customer->shopname) }}" required>
                                 @error('shopname')
                                 <div class="invalid-feedback">
@@ -61,7 +61,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="email">Customer Email <span class="text-danger">*</span></label>
+                                <label for="email">Correo Electrónico del Cliente <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $customer->email) }}" required>
                                 @error('email')
                                 <div class="invalid-feedback">
@@ -70,7 +70,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="phone">Customer Phone <span class="text-danger">*</span></label>
+                                <label for="phone">Teléfono del Cliente <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone', $customer->phone) }}" required>
                                 @error('phone')
                                 <div class="invalid-feedback">
@@ -79,7 +79,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="account_holder">Account Holder</label>
+                                <label for="account_holder">Titular de la Cuenta</label>
                                 <input type="text" class="form-control @error('account_holder') is-invalid @enderror" id="account_holder" name="account_holder" value="{{ old('account_holder', $customer->account_holder) }}">
                                 @error('account_holder')
                                 <div class="invalid-feedback">
@@ -88,9 +88,9 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="bank_name">Bank Name</label>
+                                <label for="bank_name">Nombre del Banco</label>
                                 <select class="form-control @error('bank_name') is-invalid @enderror" name="bank_name">
-                                    <option value="">Select Year..</option>
+                                    <option value="">Seleccionar Año..</option>
                                     <option value="BRI" @if(old('bank_name', $customer->bank_name) == 'BRI')selected="selected"@endif>BRI</option>
                                     <option value="BNI" @if(old('bank_name', $customer->bank_name) == 'BNI')selected="selected"@endif>BNI</option>
                                     <option value="BCA" @if(old('bank_name', $customer->bank_name) == 'BCA')selected="selected"@endif>BCA</option>
@@ -104,7 +104,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="account_number">Account Number</label>
+                                <label for="account_number">Número de Cuenta</label>
                                 <input type="text" class="form-control @error('account_number') is-invalid @enderror" id="account_number" name="account_number" value="{{ old('account_number', $customer->account_number) }}">
                                 @error('account_number')
                                 <div class="invalid-feedback">
@@ -113,7 +113,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="bank_branch">Bank Branch</label>
+                                <label for="bank_branch">Sucursal Bancaria</label>
                                 <input type="text" class="form-control @error('bank_branch') is-invalid @enderror" id="bank_branch" name="bank_branch" value="{{ old('bank_branch', $customer->bank_branch) }}">
                                 @error('bank_branch')
                                 <div class="invalid-feedback">
@@ -122,7 +122,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="city">Customer City <span class="text-danger">*</span></label>
+                                <label for="city">Ciudad del Cliente <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" value="{{ old('city', $customer->city) }}" required>
                                 @error('city')
                                 <div class="invalid-feedback">
@@ -131,7 +131,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-12">
-                                <label for="address">Customer Address <span class="text-danger">*</span></label>
+                                <label for="address">Dirección del Cliente <span class="text-danger">*</span></label>
                                 <textarea class="form-control @error('address') is-invalid @enderror" name="address" required>{{ old('address', $customer->address) }}</textarea>
                                 @error('address')
                                 <div class="invalid-feedback">
@@ -140,17 +140,17 @@
                                 @enderror
                             </div>
                         </div>
-                        <!-- end: Input Data -->
+                        <!-- Fin: Datos de Entrada -->
                         <div class="mt-2">
-                            <button type="submit" class="btn btn-primary mr-2">Update</button>
-                            <a class="btn bg-danger" href="{{ route('customers.index') }}">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">Actualizar</button>
+                            <a class="btn bg-danger" href="{{ route('customers.index') }}">Cancelar</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Page end  -->
+    <!-- Fin de la página -->
 </div>
 
 @include('components.preview-img-form')

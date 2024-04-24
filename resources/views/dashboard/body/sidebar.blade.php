@@ -33,7 +33,7 @@
           <li class="{{ Request::is('pos*') ? 'active' : '' }}">
             <a href="{{ route('pos.index') }}" class="svg-icon">
               <i class="fa-solid fa-cart-shopping"></i>
-              <span class="ml-3">punto de venta</span>
+              <span class="ml-3">Punto de venta</span>
             </a>
           </li>
         @endif
@@ -45,7 +45,7 @@
             <a href="#orders" class="collapsed" data-toggle="collapse"
               aria-expanded="false">
               <i class="fa-solid fa-basket-shopping"></i>
-              <span class="ml-3">Ordenes</span>
+              <span class="ml-3">Órdenes</span>
               <svg class="svg-icon iq-arrow-right arrow-active" width="20"
                 height="20" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -59,21 +59,21 @@
 
               <li class="{{ Request::is('orders/pending*') ? 'active' : '' }}">
                 <a href="{{ route('order.pendingOrders') }}">
-                  <i class="fa-solid fa-arrow-right"></i><span>Ordenes
+                  <i class="fa-solid fa-arrow-right"></i><span>Órdenes
                     Pendientes
                   </span>
                 </a>
               </li>
               <li class="{{ Request::is('orders/complete*') ? 'active' : '' }}">
                 <a href="{{ route('order.completeOrders') }}">
-                  <i class="fa-solid fa-arrow-right"></i><span>Ordenes Completas
+                  <i class="fa-solid fa-arrow-right"></i><span>Órdenes Completas
                   </span>
                 </a>
               </li>
               <li class="{{ Request::is('pending/due*') ? 'active' : '' }}">
                 <a href="{{ route('order.pendingDue') }}">
-                  <i class="fa-solid fa-arrow-right"></i><span>Pending
-                    Due</span>
+                  <i class="fa-solid fa-arrow-right"></i><span>Pendiente
+                    Vencido</span>
                 </a>
               </li>
               <li class="{{ Request::is(['stock*']) ? 'active' : '' }}">
@@ -90,7 +90,7 @@
             <a href="#products" class="collapsed" data-toggle="collapse"
               aria-expanded="false">
               <i class="fa-solid fa-boxes-stacked"></i>
-              <span class="ml-3">Products</span>
+              <span class="ml-3">Productos</span>
               <svg class="svg-icon iq-arrow-right arrow-active" width="20"
                 height="20" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -103,20 +103,20 @@
               data-parent="#iq-sidebar-toggle" style="">
               <li class="{{ Request::is(['products']) ? 'active' : '' }}">
                 <a href="{{ route('products.index') }}">
-                  <i class="fa-solid fa-arrow-right"></i><span>Products</span>
+                  <i class="fa-solid fa-arrow-right"></i><span>Productos</span>
                 </a>
               </li>
               <li
                 class="{{ Request::is(['products/create']) ? 'active' : '' }}">
                 <a href="{{ route('products.create') }}">
-                  <i class="fa-solid fa-arrow-right"></i><span>Add
-                    Product</span>
+                  <i class="fa-solid fa-arrow-right"></i><span>Agregar
+                    Producto</span>
                 </a>
               </li>
               <li class="{{ Request::is(['categories*']) ? 'active' : '' }}">
                 <a href="{{ route('categories.index') }}">
                   <i
-                    class="fa-solid fa-arrow-right"></i><span>Categories</span>
+                    class="fa-solid fa-arrow-right"></i><span>Categorías</span>
                 </a>
               </li>
             </ul>
@@ -129,7 +129,7 @@
           <li class="{{ Request::is('employees*') ? 'active' : '' }}">
             <a href="{{ route('employees.index') }}" class="svg-icon">
               <i class="fa-solid fa-users"></i>
-              <span class="ml-3">Employees</span>
+              <span class="ml-3">Empleados</span>
             </a>
           </li>
         @endif
@@ -138,7 +138,7 @@
           <li class="{{ Request::is('customers*') ? 'active' : '' }}">
             <a href="{{ route('customers.index') }}" class="svg-icon">
               <i class="fa-solid fa-users"></i>
-              <span class="ml-3">Customers</span>
+              <span class="ml-3">Clientes</span>
             </a>
           </li>
         @endif
@@ -147,7 +147,7 @@
           <li class="{{ Request::is('suppliers*') ? 'active' : '' }}">
             <a href="{{ route('suppliers.index') }}" class="svg-icon">
               <i class="fa-solid fa-users"></i>
-              <span class="ml-3">Suppliers</span>
+              <span class="ml-3">Proveedores</span>
             </a>
           </li>
         @endif
@@ -157,7 +157,7 @@
             <a href="#advance-salary" class="collapsed"
               data-toggle="collapse" aria-expanded="false">
               <i class="fa-solid fa-cash-register"></i>
-              <span class="ml-3">Salary</span>
+              <span class="ml-3">Salario</span>
               <svg class="svg-icon iq-arrow-right arrow-active" width="20"
                 height="20" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -173,28 +173,28 @@
               <li
                 class="{{ Request::is(['advance-salary', 'advance-salary/*/edit']) ? 'active' : '' }}">
                 <a href="{{ route('advance-salary.index') }}">
-                  <i class="fa-solid fa-arrow-right"></i><span>All Advance
-                    Salary</span>
+                  <i class="fa-solid fa-arrow-right"></i><span>Todos los
+                    salarios anticipados</span>
                 </a>
               </li>
               <li
                 class="{{ Request::is('advance-salary/create*') ? 'active' : '' }}">
                 <a href="{{ route('advance-salary.create') }}">
-                  <i class="fa-solid fa-arrow-right"></i><span>Create Advance
-                    Salary</span>
+                  <i class="fa-solid fa-arrow-right"></i><span>Crear salario
+                    anticipado</span>
                 </a>
               </li>
               <li class="{{ Request::is('pay-salary') ? 'active' : '' }}">
                 <a href="{{ route('pay-salary.index') }}">
-                  <i class="fa-solid fa-arrow-right"></i><span>Pay
-                    Salary</span>
+                  <i class="fa-solid fa-arrow-right"></i><span>Pagar
+                    salario</span>
                 </a>
               </li>
               <li
                 class="{{ Request::is('pay-salary/history*') ? 'active' : '' }}">
                 <a href="{{ route('pay-salary.payHistory') }}">
-                  <i class="fa-solid fa-arrow-right"></i><span>History Pay
-                    Salary</span>
+                  <i class="fa-solid fa-arrow-right"></i><span>Historial de
+                    pago de salario</span>
                 </a>
               </li>
             </ul>
@@ -206,7 +206,7 @@
             <a href="#attendence" class="collapsed" data-toggle="collapse"
               aria-expanded="false">
               <i class="fa-solid fa-calendar-days"></i>
-              <span class="ml-3">Attendence</span>
+              <span class="ml-3">Asistencia</span>
               <svg class="svg-icon iq-arrow-right arrow-active" width="20"
                 height="20" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -222,15 +222,15 @@
               <li
                 class="{{ Request::is(['employee/attendence']) ? 'active' : '' }}">
                 <a href="{{ route('attendence.index') }}">
-                  <i class="fa-solid fa-arrow-right"></i><span>All
-                    Attedence</span>
+                  <i class="fa-solid fa-arrow-right"></i><span>Toda la
+                    asistencia</span>
                 </a>
               </li>
               <li
                 class="{{ Request::is('employee/attendence/*') ? 'active' : '' }}">
                 <a href="{{ route('attendence.create') }}">
-                  <i class="fa-solid fa-arrow-right"></i><span>Create
-                    Attendence</span>
+                  <i class="fa-solid fa-arrow-right"></i><span>Crear
+                    asistencia</span>
                 </a>
               </li>
             </ul>
@@ -245,7 +245,7 @@
             <a href="#permission" class="collapsed" data-toggle="collapse"
               aria-expanded="false">
               <i class="fa-solid fa-key"></i>
-              <span class="ml-3">Role & Permission</span>
+              <span class="ml-3">Rol & Permiso</span>
               <svg class="svg-icon iq-arrow-right arrow-active" width="20"
                 height="20" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -261,7 +261,7 @@
                 class="{{ Request::is(['permission', 'permission/create', 'permission/edit/*']) ? 'active' : '' }}">
                 <a href="{{ route('permission.index') }}">
                   <i
-                    class="fa-solid fa-arrow-right"></i><span>Permissions</span>
+                    class="fa-solid fa-arrow-right"></i><span>Permisos</span>
                 </a>
               </li>
               <li
@@ -273,8 +273,8 @@
               <li
                 class="{{ Request::is(['role/permission*']) ? 'active' : '' }}">
                 <a href="{{ route('rolePermission.index') }}">
-                  <i class="fa-solid fa-arrow-right"></i><span>Role in
-                    Permissions</span>
+                  <i class="fa-solid fa-arrow-right"></i><span>Rol en
+                    permisos</span>
                 </a>
               </li>
             </ul>
@@ -285,7 +285,7 @@
           <li class="{{ Request::is('users*') ? 'active' : '' }}">
             <a href="{{ route('users.index') }}" class="svg-icon">
               <i class="fa-solid fa-users"></i>
-              <span class="ml-3">Users</span>
+              <span class="ml-3">Usuarios</span>
             </a>
           </li>
         @endif
@@ -294,7 +294,7 @@
           <li class="{{ Request::is('database/backup*') ? 'active' : '' }}">
             <a href="{{ route('backup.index') }}" class="svg-icon">
               <i class="fa-solid fa-database"></i>
-              <span class="ml-3">Backup Database</span>
+              <span class="ml-3">Copia de seguridad de la base de datos</span>
             </a>
           </li>
         @endif

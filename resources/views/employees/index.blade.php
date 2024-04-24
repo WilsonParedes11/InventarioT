@@ -14,13 +14,12 @@
             @endif
             <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                 <div>
-                    <h4 class="mb-3">Employee List</h4>
-                    <p class="mb-0">A employee dashboard lets you easily gather and visualize employee data from optimizing <br>
-                        the employee experience, ensuring employee retention. </p>
+                    <h4 class="mb-3">Lista de Empleados</h4>
+                    <p class="mb-0">Un panel de empleados te permite recopilar y visualizar fácilmente datos de empleados desde la optimización de la experiencia del empleado, asegurando la retención de empleados.</p>
                 </div>
                 <div>
-                <a href="{{ route('employees.create') }}" class="btn btn-primary add-list"><i class="fa-solid fa-plus mr-3"></i>Add Employee</a>
-                <a href="{{ route('employees.index') }}" class="btn btn-danger add-list"><i class="fa-solid fa-trash mr-3"></i>Clear Search</a>
+                <a href="{{ route('employees.create') }}" class="btn btn-primary add-list"><i class="fa-solid fa-plus mr-3"></i>Agregar Empleado</a>
+                <a href="{{ route('employees.index') }}" class="btn btn-danger add-list"><i class="fa-solid fa-trash mr-3"></i>Limpiar Búsqueda</a>
                 </div>
             </div>
         </div>
@@ -29,7 +28,7 @@
             <form action="{{ route('employees.index') }}" method="get">
                 <div class="d-flex flex-wrap align-items-center justify-content-between">
                     <div class="form-group row">
-                        <label for="row" class="col-sm-3 align-self-center">Row:</label>
+                        <label for="row" class="col-sm-3 align-self-center">Fila:</label>
                         <div class="col-sm-9">
                             <select class="form-control" name="row">
                                 <option value="10" @if(request('row') == '10')selected="selected"@endif>10</option>
@@ -41,15 +40,15 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="control-label col-sm-3 align-self-center" for="search">Search:</label>
+                        <label class="control-label col-sm-3 align-self-center" for="search">Buscar:</label>
                         <div class="col-sm-8">
                             <div class="input-group">
-                                <input type="text" id="search" class="form-control" name="search" placeholder="Search employee" value="{{ request('search') }}">
+                                <input type="text" id="search" class="form-control" name="search" placeholder="Buscar empleado" value="{{ request('search') }}">
                                 <div class="input-group-append">
                                     <button type="submit" class="input-group-text bg-primary"><i class="fa-solid fa-magnifying-glass font-size-20"></i></button>
                                 </div>
                             </div>
-                            {{-- <input id="search" type="text" class="form-control" name="search" placeholder="Search employee"> --}}
+                            {{-- <input id="search" type="text" class="form-control" name="search" placeholder="Buscar empleado"> --}}
                         </div>
                     </div>
                 </div>
@@ -62,13 +61,13 @@
                     <thead class="bg-white text-uppercase">
                         <tr class="ligth ligth-data">
                             <th>No.</th>
-                            <th>Photo</th>
+                            <th>Foto</th>
                             <th>@sortablelink('name')</th>
                             <th>@sortablelink('email')</th>
                             <th>@sortablelink('phone')</th>
                             <th>@sortablelink('salary')</th>
                             <th>@sortablelink('city')</th>
-                            <th>Action</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody class="ligth-body">
@@ -85,16 +84,16 @@
                             <td>{{ $employee->city }}</td>
                             <td>
                                 <div class="d-flex align-items-center list-action">
-                                    <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                    <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver"
                                         href="{{ route('employees.show', $employee->id) }}"><i class="ri-eye-line mr-0"></i>
                                     </a>
-                                    <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
+                                    <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar"
                                         href="{{ route('employees.edit', $employee->id) }}""><i class="ri-pencil-line mr-0"></i>
                                     </a>
                                     <form action="{{ route('employees.destroy', $employee->id) }}" method="POST" style="margin-bottom: 5px">
                                         @method('delete')
                                         @csrf
-                                        <button type="submit" class="badge bg-warning mr-2 border-none" onclick="return confirm('Are you sure you want to delete this record?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ri-delete-bin-line mr-0"></i></button>
+                                        <button type="submit" class="badge bg-warning mr-2 border-none" onclick="return confirm('¿Estás seguro de que quieres eliminar este registro?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar"><i class="ri-delete-bin-line mr-0"></i></button>
                                     </form>
                                 </div>
                             </td>
@@ -102,7 +101,7 @@
 
                         @empty
                         <div class="alert text-white bg-danger" role="alert">
-                            <div class="iq-alert-text">Data not Found.</div>
+                            <div class="iq-alert-text">Datos no encontrados.</div>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <i class="ri-close-line"></i>
                             </button>
@@ -114,7 +113,7 @@
             {{ $employees->links() }}
         </div>
     </div>
-    <!-- Page end  -->
+    <!-- Fin de la Página  -->
 </div>
 
 @endsection
