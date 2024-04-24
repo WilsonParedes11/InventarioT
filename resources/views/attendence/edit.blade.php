@@ -14,7 +14,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">Edit Employee Attendence</h4>
+                        <h4 class="card-title">Editar Asistencia de Empleado</h4>
                     </div>
                 </div>
 
@@ -24,7 +24,7 @@
                         <!-- begin: Input Data -->
                         <div class="row align-items-center">
                             <div class="form-group col-md-6">
-                                <label for="datepicker">Date <span class="text-danger">*</span></label>
+                                <label for="datepicker">Fecha <span class="text-danger">*</span></label>
                                 <input id="datepicker" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date', $date) }}" />
                                 @error('date')
                                 <div class="invalid-feedback">
@@ -39,8 +39,8 @@
                                         <thead class="bg-white text-uppercase">
                                             <tr class="ligth ligth-data">
                                                 <th>No.</th>
-                                                <th>Employee</th>
-                                                <th class="text-center">Attendence Status</th>
+                                                <th>Empleado</th>
+                                                <th class="text-center">Estado de Asistencia</th>
                                             </tr>
                                         </thead>
                                         <tbody class="ligth-body">
@@ -55,19 +55,19 @@
                                                             <div class="input-group-text">
                                                                 <div class="custom-radio">
                                                                     <input type="radio" id="present{{ $key }}" name="status{{ $key }}" class="custom-control-input position-relative" style="height: 20px" value="present" {{ $attendence->status == 'present' ? 'checked' : '' }}>
-                                                                    <label class="custom-control-label" for="present{{ $key }}"> Present </label>
+                                                                    <label class="custom-control-label" for="present{{ $key }}"> Presente </label>
                                                                 </div>
                                                             </div>
                                                             <div class="input-group-text mx-2">
                                                                 <div class="custom-radio">
                                                                     <input type="radio" id="leave{{ $key }}" name="status{{ $key }}" class="custom-control-input position-relative" style="height: 20px" value="leave" {{ $attendence->status == 'leave' ? 'checked' : '' }}>
-                                                                    <label class="custom-control-label" for="leave{{ $key }}"> Leave </label>
+                                                                    <label class="custom-control-label" for="leave{{ $key }}"> Ausente </label>
                                                                 </div>
                                                             </div>
                                                             <div class="input-group-text">
                                                                 <div class="custom-radio">
                                                                     <input type="radio" id="absent{{ $key }}" name="status{{ $key }}" class="custom-control-input position-relative" style="height: 20px" value="absent" {{ $attendence->status == 'absent' ? 'checked' : '' }}>
-                                                                    <label class="custom-control-label" for="absent{{ $key }}"> Absent </label>
+                                                                    <label class="custom-control-label" for="absent{{ $key }}"> Ausente </label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -82,8 +82,8 @@
                         </div>
                         <!-- end: Input Data -->
                         <div class="mt-2">
-                            <button type="submit" class="btn btn-primary">Update</button>
-                            <a href="{{ route('attendence.index') }}" class="btn btn-danger">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                            <a href="{{ route('attendence.index') }}" class="btn btn-danger">Cancelar</a>
                         </div>
                     </form>
                 </div>

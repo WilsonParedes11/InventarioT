@@ -15,7 +15,7 @@
     </div>
 
     <div class="row px-3">
-        <!-- begin: Left Detail Employee -->
+        <!-- begin: Detalle izquierdo del cliente -->
         <div class="col-lg-4 card-profile mb-5 h-50">
             <div class="card card-block card-stretch card-height mb-5">
                 <div class="card-body">
@@ -26,8 +26,8 @@
                         <div class="ml-3">
                             <h4 class="mb-1">{{ $customer->name }}</h4>
                             <p class="mb-2">{{ $customer->shopname }}</p>
-                            <a href="{{ route('customers.edit', $customer->id) }}" class="btn btn-primary font-size-14">Edit</a>
-                            <a href="{{ route('customers.index') }}" class="btn btn-danger font-size-14">Back</a>
+                            <a href="{{ route('customers.edit', $customer->id) }}" class="btn btn-primary font-size-14">Editar</a>
+                            <a href="{{ route('customers.index') }}" class="btn btn-danger font-size-14">Volver</a>
                         </div>
                     </div>
                     <ul class="list-inline p-0 m-0">
@@ -53,21 +53,21 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
-                                <p class="mb-0">{{ $customer->city ? $customer->city : 'Unknown' }}</p>
+                                <p class="mb-0">{{ $customer->city ? $customer->city : 'Desconocido' }}</p>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <!-- end: Left Detail Employee -->
+        <!-- end: Detalle izquierdo del cliente -->
 
-        <!-- begin: Right Detail Employee -->
+        <!-- begin: Detalle derecho del cliente -->
         <div class="col-lg-8 card-profile">
             <div class="card card-block card-stretch mb-0">
                 <div class="card-header px-3">
                     <div class="header-title">
-                        <h4 class="card-title">Customer Information</h4>
+                        <h4 class="card-title">Información del Cliente</h4>
                     </div>
                 </div>
                 <div class="card-body p-3">
@@ -75,7 +75,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">Name</label>
+                                    <label class="col-form-label">Nombre</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <input type="text" class="form-control bg-white" value="{{ $customer->name }}" readonly>
@@ -95,7 +95,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">Phone</label>
+                                    <label class="col-form-label">Teléfono</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <input type="text" class="form-control bg-white" value="{{ $customer->phone }}" readonly>
@@ -105,7 +105,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">Shop Name</label>
+                                    <label class="col-form-label">Nombre de la Tienda</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <input type="text" class="form-control bg-white" value="{{ $customer->shopname }}" readonly>
@@ -115,7 +115,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">Account Holder</label>
+                                    <label class="col-form-label">Titular de la Cuenta</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <input type="text" class="form-control bg-white" value="{{ $customer->account_holder }}" readonly>
@@ -125,7 +125,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">Bank Name</label>
+                                    <label class="col-form-label">Nombre del Banco</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <input type="text" class="form-control bg-white" value="{{ $customer->bank_name }}" readonly>
@@ -135,7 +135,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">Account Number</label>
+                                    <label class="col-form-label">Número de Cuenta</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <input type="text" class="form-control bg-white" value="{{ $customer->account_number }}" readonly>
@@ -145,7 +145,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">Bank Branch</label>
+                                    <label class="col-form-label">Sucursal Bancaria</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <input type="text" class="form-control bg-white" value="{{ $customer->bank_branch }}" readonly>
@@ -155,7 +155,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">City</label>
+                                    <label class="col-form-label">Ciudad</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <input type="text" class="form-control bg-white" value="{{ $customer->city }}" readonly>
@@ -165,7 +165,7 @@
                         <li class="col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-3 col-4">
-                                    <label class="col-form-label">Address</label>
+                                    <label class="col-form-label">Dirección</label>
                                 </div>
                                 <div class="col-sm-9 col-8">
                                     <textarea class="form-control bg-white" readonly>{{ $customer->address }}</textarea>
@@ -176,7 +176,7 @@
                 </div>
             </div>
         </div>
-        <!-- end: Right Detail Employee -->
+        <!-- end: Detalle derecho del cliente -->
     </div>
 </div>
 @endsection

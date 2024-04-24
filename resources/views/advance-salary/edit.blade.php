@@ -31,7 +31,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">Edit Advance Salary</h4>
+                        <h4 class="card-title">Editar Adelanto de Salario</h4>
                     </div>
                 </div>
 
@@ -42,9 +42,9 @@
                         <!-- begin: Input Data -->
                         <div class=" row align-items-center">
                             <div class="form-group col-md-12">
-                                <label for="employee_id">Employee Name <span class="text-danger">*</span></label>
+                                <label for="employee_id">Nombre del Empleado <span class="text-danger">*</span></label>
                                 <select class="form-control mb-3" id="employee_id" name="employee_id" required>
-                                    <option selected="" disabled>-- Select Employee --</option>
+                                    <option selected="" disabled>-- Seleccionar Empleado --</option>
                                     @foreach ($employees as $employee)
                                         <option value="{{ $employee->id }}" {{ old('employee_id', $advance_salary->employee->id) == $employee->id ? 'selected' : '' }}>
                                             {{ $employee->name }}
@@ -58,7 +58,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="datepicker">Date <span class="text-danger">*</span></label>
+                                <label for="datepicker">Fecha <span class="text-danger">*</span></label>
                                 <input id="datepicker" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date', $advance_salary->date) }}" />
                                 @error('date')
                                 <div class="invalid-feedback">
@@ -67,7 +67,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="advance_salary">Advance Salary <span class="text-danger">*</span></label>
+                                <label for="advance_salary">Adelanto de Salario <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('advance_salary') is-invalid @enderror" id="advance_salary" name="advance_salary" value="{{ old('advance_salary', $advance_salary->advance_salary) }}" required>
                                 @error('advance_salary')
                                 <div class="invalid-feedback">
@@ -78,8 +78,8 @@
                         </div>
                         <!-- end: Input Data -->
                         <div class="mt-2">
-                            <button type="submit" class="btn btn-primary mr-2">Save</button>
-                            <a class="btn bg-danger" href="{{ route('advance-salary.index') }}">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">Guardar</button>
+                            <a class="btn bg-danger" href="{{ route('advance-salary.index') }}">Cancelar</a>
                         </div>
                     </form>
                 </div>

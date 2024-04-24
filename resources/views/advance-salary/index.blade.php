@@ -14,13 +14,12 @@
             @endif
             <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                 <div>
-                    <h4 class="mb-3">Advance Salary List</h4>
-                    <p class="mb-0">A advance salary dashboard lets you easily gather and visualize advance salary data from optimizing <br>
-                        the advance salary experience, ensuring advance salary retention. </p>
+                    <h4 class="mb-3">Lista de Adelantos de Salario</h4>
+                    <p class="mb-0">Un panel de adelanto de salario le permite recopilar y visualizar fácilmente datos de adelanto de salario desde la optimización de la experiencia de adelanto de salario, garantizando la retención de adelanto de salario.</p>
                 </div>
                 <div>
-                <a href="{{ route('advance-salary.create') }}" class="btn btn-primary add-list"><i class="fas fa-plus mr-3"></i></i>Create Advance Salary</a>
-                <a href="{{ route('advance-salary.index') }}" class="btn btn-danger add-list"><i class="fa-solid fa-trash mr-3"></i>Clear Search</a>
+                <a href="{{ route('advance-salary.create') }}" class="btn btn-primary add-list"><i class="fas fa-plus mr-3"></i></i>Crear Adelanto de Salario</a>
+                <a href="{{ route('advance-salary.index') }}" class="btn btn-danger add-list"><i class="fa-solid fa-trash mr-3"></i>Limpiar Búsqueda</a>
                 </div>
             </div>
         </div>
@@ -29,7 +28,7 @@
             <form action="{{ route('advance-salary.index') }}" method="get">
                 <div class="d-flex flex-wrap align-items-center justify-content-between">
                     <div class="form-group row">
-                        <label for="row" class="col-sm-3 align-self-center">Row:</label>
+                        <label for="row" class="col-sm-3 align-self-center">Fila:</label>
                         <div class="col-sm-9">
                             <select class="form-control" name="row">
                                 <option value="10" @if(request('row') == '10')selected="selected"@endif>10</option>
@@ -41,10 +40,10 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="control-label col-sm-3 align-self-center" for="search">Search:</label>
+                        <label class="control-label col-sm-3 align-self-center" for="search">Buscar:</label>
                         <div class="col-sm-8">
                             <div class="input-group">
-                                <input type="text" id="search" class="form-control" name="search" placeholder="Search employee" value="{{ request('search') }}">
+                                <input type="text" id="search" class="form-control" name="search" placeholder="Buscar empleado" value="{{ request('search') }}">
                                 <div class="input-group-append">
                                     <button type="submit" class="input-group-text bg-primary"><i class="fa-solid fa-magnifying-glass font-size-20"></i></button>
                                 </div>
@@ -61,11 +60,11 @@
                     <thead class="bg-white text-uppercase">
                         <tr class="ligth ligth-data">
                             <th>No.</th>
-                            <th>Photo</th>
-                            <th>@sortablelink('employee.name', 'name')</th>
+                            <th>Foto</th>
+                            <th>@sortablelink('employee.name', 'nombre')</th>
                             <th>@sortablelink('date')</th>
-                            <th>@sortablelink('advance_salary', 'advance salary')</th>
-                            <th>Action</th>
+                            <th>@sortablelink('advance_salary', 'adelanto de salario')</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody class="ligth-body">
@@ -77,16 +76,16 @@
                             </td>
                             <td>{{ $advance_salary->employee->name }}</td>
                             <td>{{ Carbon\Carbon::parse($advance_salary->date)->format('M/Y') }}</td>
-                            <td>{{ $advance_salary->advance_salary ? '$'.$advance_salary->advance_salary : 'No Advance' }}</td>
+                            <td>{{ $advance_salary->advance_salary ? '$'.$advance_salary->advance_salary : 'No hay adelanto' }}</td>
                             <td>
                                 <form action="{{ route('advance-salary.destroy', $advance_salary->id) }}" method="POST" style="margin-bottom: 5px">
                                     @method('delete')
                                     @csrf
                                     <div class="d-flex align-items-center list-action">
-                                        <a class="btn btn-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
+                                        <a class="btn btn-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar"
                                             href="{{ route('advance-salary.edit', $advance_salary->id) }}""><i class="ri-pencil-line mr-0"></i>
                                         </a>
-                                        <button type="submit" class="btn btn-warning mr-2 border-none" onclick="return confirm('Are you sure you want to delete this record?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                        <button type="submit" class="btn btn-warning mr-2 border-none" onclick="return confirm('¿Estás seguro de que deseas eliminar este registro?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar">
                                             <i class="ri-delete-bin-line mr-0"></i>
                                         </button>
                                     </div>
@@ -96,7 +95,7 @@
 
                         @empty
                         <div class="alert text-white bg-danger" role="alert">
-                            <div class="iq-alert-text">Data not Found.</div>
+                            <div class="iq-alert-text">Datos no encontrados.</div>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <i class="ri-close-line"></i>
                             </button>

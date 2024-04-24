@@ -14,13 +14,13 @@
             @endif
             <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                 <div>
-                    <h4 class="mb-3">Attendence List</h4>
-                    <p class="mb-0">A Attendence dashboard lets you easily gather and visualize Attendence data from optimizing <br>
-                        the Attendence experience, ensuring Attendence retention. </p>
+                    <h4 class="mb-3">Lista de Asistencia</h4>
+                    <p class="mb-0">Un panel de asistencia te permite reunir y visualizar fácilmente datos de asistencia, optimizando <br>
+                        la experiencia de asistencia y garantizando la retención de asistencia. </p>
                 </div>
                 <div>
-                    <a href="{{ route('attendence.create') }}" class="btn btn-primary add-list"><i class="fas fa-plus mr-3"></i>Create Attendence</a>
-                    <a href="{{ route('attendence.index') }}" class="btn btn-danger add-list"><i class="fa-solid fa-trash mr-3"></i>Clear Search</a>
+                    <a href="{{ route('attendence.create') }}" class="btn btn-primary add-list"><i class="fas fa-plus mr-3"></i>Crear Asistencia</a>
+                    <a href="{{ route('attendence.index') }}" class="btn btn-danger add-list"><i class="fa-solid fa-trash mr-3"></i>Limpiar Búsqueda</a>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
             <form action="{{ route('attendence.index') }}" method="get">
                 <div class="d-flex flex-wrap align-items-center justify-content-between">
                     <div class="form-group row">
-                        <label for="row" class="col-sm-3 align-self-center">Row:</label>
+                        <label for="row" class="col-sm-3 align-self-center">Fila:</label>
                         <div class="col-sm-9">
                             <select class="form-control" name="row">
                                 <option value="10" @if(request('row') == '10')selected="selected"@endif>10</option>
@@ -52,7 +52,7 @@
                         <tr class="ligth ligth-data">
                             <th>No.</th>
                             <th>@sortablelink('date')</th>
-                            <th>Action</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody class="ligth-body">
@@ -62,10 +62,10 @@
                             <td>{{ $attendence->date }}</td>
                             <td>
                                 <div class="d-flex align-items-center list-action">
-                                    <a class="btn btn-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
+                                    <a class="btn btn-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar"
                                         href="{{ route('attendence.edit', $attendence->date) }}"><i class="ri-pencil-line mr-0"></i>
                                     </a>
-                                    {{-- <a class="btn btn-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                    {{-- <a class="btn btn-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver"
                                         href="{{ route('attendence.show', $attendence->date) }}"><i class="ri-eye-line mr-0"></i>
                                     </a> --}}
                                 </div>
@@ -73,7 +73,7 @@
                         </tr>
                         @empty
                         <div class="alert text-white bg-danger" role="alert">
-                            <div class="iq-alert-text">Data not Found.</div>
+                            <div class="iq-alert-text">Datos no encontrados.</div>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <i class="ri-close-line"></i>
                             </button>
