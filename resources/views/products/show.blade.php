@@ -13,22 +13,22 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">Barcode</h4>
+                        <h4 class="card-title">Código de Barras</h4>
                     </div>
                 </div>
 
                 <div class="card-body">
                     <div class=" row align-items-center">
                         <div class="form-group col-md-6">
-                            <label>Product Code</label>
+                            <label>Código del Producto</label>
                             <input type="text" class="form-control bg-white" value="{{  $product->product_code }}" readonly>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Product Barcode</label>
+                            <label>Código de Barras del Producto</label>
                             {!! $barcode !!}
                         </div>
                     </div>
-                    <!-- end: Show Data -->
+                    <!-- end: Mostrar Datos -->
                 </div>
             </div>
         </div>
@@ -37,17 +37,17 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">Information Product</h4>
+                        <h4 class="card-title">Información del Producto</h4>
                     </div>
                 </div>
 
                 <div class="card-body">
-                    <!-- begin: Show Data -->
+                    <!-- begin: Mostrar Datos -->
                     <div class="form-group row align-items-center">
                         <div class="col-md-12">
                             <div class="profile-img-edit">
                                 <div class="crm-profile-img-edit">
-                                    <img class="crm-profile-pic rounded-circle avatar-100" id="image-preview" src="{{ $product->product_image ? asset('storage/products/'.$product->product_image) : asset('assets/images/product/default.webp') }}" alt="profile-pic">
+                                    <img class="crm-profile-pic rounded-circle avatar-100" id="image-preview" src="{{ $product->product_image ? asset('storage/products/'.$product->product_image) : asset('assets/images/product/default.webp') }}" alt="foto-perfil">
                                 </div>
                             </div>
                         </div>
@@ -55,49 +55,51 @@
 
                     <div class=" row align-items-center">
                         <div class="form-group col-md-12">
-                            <label>Product Name</label>
+                            <label>Nombre del Producto</label>
                             <input type="text" class="form-control bg-white" value="{{  $product->product_name }}" readonly>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Category</label>
+                            <label>Categoría</label>
                             <input type="text" class="form-control bg-white" value="{{  $product->category->name }}" readonly>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Supplier</label>
+                            <label>Proveedor</label>
                             <input type="text" class="form-control bg-white" value="{{  $product->supplier->name }}" readonly>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Product Garage</label>
+                            <label>Garaje del Producto</label>
                             <input type="text" class="form-control bg-white" value="{{  $product->product_garage }}" readonly>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Product Store</label>
+                            <label>Tienda del Producto</label>
                             <input type="text" class="form-control bg-white" value="{{  $product->product_store }}" readonly>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Buying Date</label>
+                            <label>Fecha de Compra</label>
                             <input class="form-control bg-white" id="buying_date" value="{{ $product->buying_date }}" readonly/>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Expire Date</label>
+                            <label>Fecha de Caducidad</label>
                             <input class="form-control bg-white" id="expire_date" value="{{ $product->expire_date }}" readonly />
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Buying Price</label>
+                            <label>Precio de Compra</label>
                             <input type="text" class="form-control bg-white" value="{{  $product->buying_price }}" readonly>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Selling Price</label>
+                            <label>Precio de Venta</label>
                             <input type="text" class="form-control bg-white" value="{{  $product->selling_price }}" readonly>
                         </div>
                     </div>
-                    <!-- end: Show Data -->
+                    <!-- end: Mostrar Datos -->
                 </div>
             </div>
         </div>
     </div>
-    <!-- Page end  -->
+    <!-- Fin de la página -->
 </div>
+
+@endsection
 
 <script>
     $('#buying_date').datepicker({
@@ -113,4 +115,3 @@
 </script>
 
 @include('components.preview-img-form')
-@endsection

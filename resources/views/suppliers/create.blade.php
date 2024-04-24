@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">Add Supplier</h4>
+                        <h4 class="card-title">Agregar Proveedor</h4>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@
                         <!-- begin: Input Data -->
                         <div class=" row align-items-center">
                             <div class="form-group col-md-6">
-                                <label for="name">Supplier Name <span class="text-danger">*</span></label>
+                                <label for="name">Nombre del Proveedor <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required>
                                 @error('name')
                                 <div class="invalid-feedback">
@@ -51,7 +51,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="shopname">Shop Name <span class="text-danger">*</span></label>
+                                <label for="shopname">Nombre de la Tienda <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('shopname') is-invalid @enderror" id="shopname" name="shopname" value="{{ old('shopname') }}" required>
                                 @error('shopname')
                                 <div class="invalid-feedback">
@@ -60,7 +60,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="email">Supplier Email <span class="text-danger">*</span></label>
+                                <label for="email">Correo Electrónico del Proveedor <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required>
                                 @error('email')
                                 <div class="invalid-feedback">
@@ -69,7 +69,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="phone">Supplier Phone <span class="text-danger">*</span></label>
+                                <label for="phone">Teléfono del Proveedor <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone') }}" required>
                                 @error('phone')
                                 <div class="invalid-feedback">
@@ -78,7 +78,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="account_holder">Account Holder</label>
+                                <label for="account_holder">Titular de la Cuenta</label>
                                 <input type="text" class="form-control @error('account_holder') is-invalid @enderror" id="account_holder" name="account_holder" value="{{ old('account_holder') }}">
                                 @error('account_holder')
                                 <div class="invalid-feedback">
@@ -87,9 +87,9 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="bank_name">Bank Name</label>
+                                <label for="bank_name">Nombre del Banco</label>
                                 <select class="form-control @error('bank_name') is-invalid @enderror" name="bank_name">
-                                    <option value="">Select Year..</option>
+                                    <option value="">Seleccionar Banco..</option>
                                     <option value="BRI">BRI</option>
                                     <option value="BNI">BNI</option>
                                     <option value="BCA">BCA</option>
@@ -103,7 +103,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="account_number">Account Number</label>
+                                <label for="account_number">Número de Cuenta</label>
                                 <input type="text" class="form-control @error('account_number') is-invalid @enderror" id="account_number" name="account_number" value="{{ old('account_number') }}">
                                 @error('account_number')
                                 <div class="invalid-feedback">
@@ -112,7 +112,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="bank_branch">Bank Branch</label>
+                                <label for="bank_branch">Sucursal Bancaria</label>
                                 <input type="text" class="form-control @error('bank_branch') is-invalid @enderror" id="bank_branch" name="bank_branch" value="{{ old('bank_branch') }}">
                                 @error('bank_branch')
                                 <div class="invalid-feedback">
@@ -121,7 +121,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="city">Supplier City <span class="text-danger">*</span></label>
+                                <label for="city">Ciudad del Proveedor <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" value="{{ old('city') }}" required>
                                 @error('city')
                                 <div class="invalid-feedback">
@@ -130,11 +130,11 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="type">Type of Supplier <span class="text-danger">*</span></label>
+                                <label for="type">Tipo de Proveedor <span class="text-danger">*</span></label>
                                 <select class="form-control @error('type') is-invalid @enderror" name="type" required>
-                                    <option value="">Select Type..</option>
-                                    <option value="Distributor">Distributor</option>
-                                    <option value="Whole Seller">Whole Seller</option>
+                                    <option value="">Seleccionar Tipo..</option>
+                                    <option value="Distribuidor">Distribuidor</option>
+                                    <option value="Mayorista">Mayorista</option>
                                 </select>
                                 @error('type')
                                 <div class="invalid-feedback">
@@ -143,7 +143,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-12">
-                                <label for="address">Supplier Address <span class="text-danger">*</span></label>
+                                <label for="address">Dirección del Proveedor <span class="text-danger">*</span></label>
                                 <textarea class="form-control @error('address') is-invalid @enderror" name="address" required>{{ old('address') }}</textarea>
                                 @error('address')
                                 <div class="invalid-feedback">
@@ -154,15 +154,15 @@
                         </div>
                         <!-- end: Input Data -->
                         <div class="mt-2">
-                            <button type="submit" class="btn btn-primary mr-2">Save</button>
-                            <a class="btn bg-danger" href="{{ route('suppliers.index') }}">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">Guardar</button>
+                            <a class="btn bg-danger" href="{{ route('suppliers.index') }}">Cancelar</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Page end  -->
+    <!-- Página final  -->
 </div>
 
 @include('components.preview-img-form')

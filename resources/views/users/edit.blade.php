@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">Edit User</h4>
+                        <h4 class="card-title">Editar Usuario</h4>
                     </div>
                 </div>
 
@@ -43,7 +43,7 @@
                         <!-- begin: Input Data -->
                         <div class=" row align-items-center">
                             <div class="form-group col-md-12">
-                                <label for="name">Name <span class="text-danger">*</span></label>
+                                <label for="name">Nombre <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $userData->name) }}" required>
                                 @error('name')
                                 <div class="invalid-feedback">
@@ -52,7 +52,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="username">Username <span class="text-danger">*</span></label>
+                                <label for="username">Nombre de Usuario <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ old('username', $userData->username) }}" required>
                                 @error('username')
                                 <div class="invalid-feedback">
@@ -61,7 +61,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="email">Email <span class="text-danger">*</span></label>
+                                <label for="email">Correo Electrónico <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $userData->email) }}" required>
                                 @error('email')
                                 <div class="invalid-feedback">
@@ -71,7 +71,7 @@
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="password">Password</label>
+                                <label for="password">Contraseña</label>
                                 <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password">
                                 @error('password')
                                 <div class="invalid-feedback">
@@ -80,7 +80,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="password_confirmation">Confirm Password</label>
+                                <label for="password_confirmation">Confirmar Contraseña</label>
                                 <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation" name="password_confirmation">
                                 @error('password_confirmation')
                                 <div class="invalid-feedback">
@@ -90,9 +90,9 @@
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="role">Role</label>
+                                <label for="role">Rol</label>
                                 <select class="form-control @error('role') is-invalid @enderror" name="role">
-                                    <option selected="" disabled>-- Select Role --</option>
+                                    <option selected="" disabled>-- Seleccionar Rol --</option>
                                     @foreach ($roles as $role)
                                         <option value="{{ $role->id }}" {{ $userData->hasRole($role->name) ? 'selected' : '' }}>{{ $role->name }}</option>
                                     @endforeach
@@ -106,8 +106,8 @@
                         </div>
                         <!-- end: Input Data -->
                         <div class="mt-2">
-                            <button type="submit" class="btn btn-primary mr-2">Save</button>
-                            <a class="btn bg-danger" href="{{ route('users.index') }}">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">Guardar</button>
+                            <a class="btn bg-danger" href="{{ route('users.index') }}">Cancelar</a>
                         </div>
                     </form>
                 </div>

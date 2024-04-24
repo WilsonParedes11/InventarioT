@@ -14,7 +14,7 @@
             @if (session()->has('success'))
                 <div class="alert text-white bg-success" role="alert">
                     <div class="iq-alert-text">{{ session('success') }}</div>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar">
                     <i class="ri-close-line"></i>
                     </button>
                 </div>
@@ -22,7 +22,7 @@
             @if (session()->has('warning'))
                 <div class="alert text-white bg-warning" role="alert">
                     <div class="iq-alert-text">{{ session('warning') }}</div>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar">
                     <i class="ri-close-line"></i>
                     </button>
                 </div>
@@ -31,7 +31,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">Pay Salary</h4>
+                        <h4 class="card-title">Pagar Salario</h4>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@
                         <!-- begin: Input Data -->
                         <div class=" row align-items-center">
                             <div class="form-group col-md-6">
-                                <label for="name">Employee Name <span class="text-danger">*</span></label>
+                                <label for="name">Nombre del Empleado <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $advanceSalary->employee->name) }}" readonly>
                                 @error('name')
                                 <div class="invalid-feedback">
@@ -51,7 +51,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="datepicker">Date <span class="text-danger">*</span></label>
+                                <label for="datepicker">Fecha <span class="text-danger">*</span></label>
                                 <input id="datepicker" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" />
                                 @error('date')
                                 <div class="invalid-feedback">
@@ -60,7 +60,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="salary">Salary <span class="text-danger">*</span></label>
+                                <label for="salary">Salario <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('salary') is-invalid @enderror" id="salary" name="salary" value="{{ $advanceSalary->employee->salary }}" readonly>
                                 @error('salary')
                                 <div class="invalid-feedback">
@@ -69,8 +69,8 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="advance_salary">Advance Salary <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control @error('advance_salary') is-invalid @enderror" id="advance_salary" name="advance_salary" value="{{ $advanceSalary->advance_salary ? $advanceSalary->advance_salary : 'No Advance' }}" readonly>
+                                <label for="advance_salary">Anticipo de Salario <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control @error('advance_salary') is-invalid @enderror" id="advance_salary" name="advance_salary" value="{{ $advanceSalary->advance_salary ? $advanceSalary->advance_salary : 'No Hay Anticipo' }}" readonly>
                                 @error('advance_salary')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -78,7 +78,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="due_salary">Due Salary <span class="text-danger">*</span></label>
+                                <label for="due_salary">Salario Adeudado <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('due_salary') is-invalid @enderror" id="due_salary" name="due_salary" value="{{ $advanceSalary->employee->salary - $advanceSalary->advance_salary }}" readonly>
                                 @error('due_salary')
                                 <div class="invalid-feedback">
@@ -89,14 +89,14 @@
                         </div>
                         <!-- end: Input Data -->
                         <div class="mt-2">
-                            <button type="submit" class="btn btn-primary"><i class="fas fa-money-check-alt mr-2"></i>Paid Salary</button>
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-money-check-alt mr-2"></i>Pagar Salario</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Page end  -->
+    <!-- Fin de la página  -->
 </div>
 
 <script>

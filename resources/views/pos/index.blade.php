@@ -14,7 +14,7 @@
                 </div>
             @endif
             <div>
-                <h4 class="mb-3">Point of Sale</h4>
+                <h4 class="mb-3">Punto de Venta</h4>
             </div>
         </div>
 
@@ -22,11 +22,11 @@
             <table class="table">
                 <thead>
                     <tr class="ligth">
-                        <th scope="col">Name</th>
-                        <th scope="col">QTY</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">SubTotal</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Cant.</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Subtotal</th>
+                        <th scope="col">Acción</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,7 +39,7 @@
                                 <div class="input-group">
                                     <input type="number" class="form-control" name="qty" required value="{{ old('qty', $item->qty) }}">
                                     <div class="input-group-append">
-                                        <button type="submit" class="btn btn-success border-none" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sumbit"><i class="fas fa-check"></i></button>
+                                        <button type="submit" class="btn btn-success border-none" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enviar"><i class="fas fa-check"></i></button>
                                     </div>
                                 </div>
                             </form>
@@ -47,7 +47,7 @@
                         <td>{{ $item->price }}</td>
                         <td>{{ $item->subtotal }}</td>
                         <td>
-                            <a href="{{ route('pos.deleteCart', $item->rowId) }}" class="btn btn-danger border-none" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa-solid fa-trash mr-0"></i></a>
+                            <a href="{{ route('pos.deleteCart', $item->rowId) }}" class="btn btn-danger border-none" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar"><i class="fa-solid fa-trash mr-0"></i></a>
                         </td>
                     </tr>
                     @endforeach
@@ -56,13 +56,13 @@
 
             <div class="container row text-center">
                 <div class="form-group col-sm-6">
-                    <p class="h4 text-primary">Quantity: {{ Cart::count() }}</p>
+                    <p class="h4 text-primary">Cantidad: {{ Cart::count() }}</p>
                 </div>
                 <div class="form-group col-sm-6">
                     <p class="h4 text-primary">Subtotal: {{ Cart::subtotal() }}</p>
                 </div>
                 <div class="form-group col-sm-6">
-                    <p class="h4 text-primary">Vat: {{ Cart::tax() }}</p>
+                    <p class="h4 text-primary">IVA: {{ Cart::tax() }}</p>
                 </div>
                 <div class="form-group col-sm-6">
                     <p class="h4 text-primary">Total: {{ Cart::total() }}</p>
@@ -75,7 +75,7 @@
                     <div class="col-md-12">
                         <div class="input-group">
                             <select class="form-control" id="customer_id" name="customer_id">
-                                <option selected="" disabled="">-- Select Customer --</option>
+                                <option selected="" disabled="">-- Seleccionar Cliente --</option>
                                 @foreach ($customers as $customer)
                                     <option value="{{ $customer->id }}">{{ $customer->name }}</option>
                                 @endforeach
@@ -89,8 +89,8 @@
                     </div>
                     <div class="col-md-12 mt-4">
                         <div class="d-flex flex-wrap align-items-center justify-content-center">
-                            <a href="{{ route('customers.create') }}" class="btn btn-primary add-list mx-1">Add Customer</a>
-                            <button type="submit" class="btn btn-success add-list mx-1">Create Invoice</button>
+                            <a href="{{ route('customers.create') }}" class="btn btn-primary add-list mx-1">Agregar Cliente</a>
+                            <button type="submit" class="btn btn-success add-list mx-1">Crear Factura</button>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                     <form action="#" method="get">
                         <div class="d-flex flex-wrap align-items-center justify-content-between">
                             <div class="form-group row">
-                                <label for="row" class="align-self-center mx-2">Row:</label>
+                                <label for="row" class="align-self-center mx-2">Fila:</label>
                                 <div>
                                     <select class="form-control" name="row">
                                         <option value="10" @if(request('row') == '10')selected="selected"@endif>10</option>
@@ -115,9 +115,9 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-sm-3 align-self-center" for="search">Search:</label>
+                                <label class="control-label col-sm-3 align-self-center" for="search">Buscar:</label>
                                 <div class="input-group col-sm-8">
-                                    <input type="text" id="search" class="form-control" name="search" placeholder="Search product" value="{{ request('search') }}">
+                                    <input type="text" id="search" class="form-control" name="search" placeholder="Buscar producto" value="{{ request('search') }}">
                                     <div class="input-group-append">
                                         <button type="submit" class="input-group-text bg-primary"><i class="fa-solid fa-magnifying-glass font-size-20"></i></button>
                                         <a href="{{ route('products.index') }}" class="input-group-text bg-danger"><i class="fa-solid fa-trash"></i></a>
@@ -133,10 +133,10 @@
                             <thead class="bg-white text-uppercase">
                                 <tr class="ligth ligth-data">
                                     <th>No.</th>
-                                    <th>Photo</th>
-                                    <th>@sortablelink('product_name', 'name')</th>
-                                    <th>@sortablelink('selling_price', 'price')</th>
-                                    <th>Action</th>
+                                    <th>Foto</th>
+                                    <th>@sortablelink('product_name', 'Nombre')</th>
+                                    <th>@sortablelink('selling_price', 'Precio')</th>
+                                    <th>Acción</th>
                                 </tr>
                             </thead>
                             <tbody class="ligth-body">
@@ -155,14 +155,14 @@
                                             <input type="hidden" name="name" value="{{ $product->product_name }}">
                                             <input type="hidden" name="price" value="{{ $product->selling_price }}">
 
-                                            <button type="submit" class="btn btn-primary border-none" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add"><i class="far fa-plus mr-0"></i></button>
+                                            <button type="submit" class="btn btn-primary border-none" data-toggle="tooltip" data-placement="top" title="" data-original-title="Agregar"><i class="far fa-plus mr-0"></i></button>
                                         </form>
                                     </td>
                                 </tr>
 
                                 @empty
                                 <div class="alert text-white bg-danger" role="alert">
-                                    <div class="iq-alert-text">Data not Found.</div>
+                                    <div class="iq-alert-text">Datos no encontrados.</div>
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <i class="ri-close-line"></i>
                                     </button>

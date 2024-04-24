@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="es">
 <head>
     <title>POS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
 
-    <!-- External CSS libraries -->
+    <!-- Bibliotecas externas de CSS -->
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/invoice/css/bootstrap.min.css') }}">
 
-    <!-- Google fonts -->
+    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Custom Stylesheet -->
+    <!-- Hoja de estilos personalizada -->
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/invoice/css/style.css') }}">
 </head>
 <body>
@@ -39,7 +39,7 @@
                             <div class="row">
                                 <div class="col-sm-6 mb-50">
                                     <div class="invoice-number">
-                                        <h4 class="inv-title-1">Invoice date:</h4>
+                                        <h4 class="inv-title-1">Fecha de la Factura:</h4>
                                         <p class="invo-addr-1">
                                             {{ $order->order_date }}
                                         </p>
@@ -53,17 +53,17 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 mb-50">
-                                    <h4 class="inv-title-1">Customer</h4>
+                                    <h4 class="inv-title-1">Cliente</h4>
                                     <p class="inv-from-1">{{ $order->customer->name }}</p>
                                     <p class="inv-from-1">{{ $order->customer->email }}</p>
                                     <p class="inv-from-1">{{ $order->customer->phone }}</p>
                                     <p class="inv-from-2">{{ $order->customer->address }}</p>
                                 </div>
                                 <div class="col-sm-6 text-end mb-50">
-                                    <h4 class="inv-title-1">Details</h4>
-                                    <p class="inv-from-1">Payment Status: {{ $order->payment_status }}</p>
-                                    <p class="inv-from-1">Total Pay: ${{ $order->pay }}</p>
-                                    <p class="inv-from-1">Due: ${{ $order->due }}</p>
+                                    <h4 class="inv-title-1">Detalles</h4>
+                                    <p class="inv-from-1">Estado del Pago: {{ $order->payment_status }}</p>
+                                    <p class="inv-from-1">Total Pagado: ${{ $order->pay }}</p>
+                                    <p class="inv-from-1">Pendiente: ${{ $order->due }}</p>
                                 </div>
                             </div>
                         </div>
@@ -72,10 +72,10 @@
                                 <table class="default-table invoice-table">
                                     <thead>
                                     <tr>
-                                        <th>Description</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Total (+Vat)</th>
+                                        <th>Descripción</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad</th>
+                                        <th>Total (+IVA)</th>
                                     </tr>
                                     </thead>
 
@@ -98,21 +98,14 @@
                                 </table>
                             </div>
                         </div>
-                        {{-- <div class="invoice-informeshon-footer">
-                            <ul>
-                                <li><a href="https://themeforest.net/user/themevessel/portfolio">www.themevessel.com</a></li>
-                                <li><a href="mailto:sales@hotelempire.com">info@themevessel.com</a></li>
-                                <li><a href="tel:+088-01737-133959">+088 01737 133959</a></li>
-                            </ul>
-                        </div> --}}
                     </div>
 
                     <div class="invoice-btn-section clearfix d-print-none">
                         <a href="javascript:window.print()" class="btn btn-lg btn-print">
-                            Print Invoice
+                            Imprimir Factura
                         </a>
                         <a id="invoice_download_btn" class="btn btn-lg btn-download">
-                            Download Invoice
+                            Descargar Factura
                         </a>
                     </div>
                 </div>

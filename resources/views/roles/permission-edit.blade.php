@@ -10,39 +10,39 @@
         ],
         [
             'slug' => 'employee',
-            'name' => 'Employee'
+            'name' => 'Empleado'
         ],
         [
             'slug' => 'customer',
-            'name' => 'Customer'
+            'name' => 'Cliente'
         ],
         [
             'slug' => 'supplier',
-            'name' => 'Supplier'
+            'name' => 'Proveedor'
         ],
         [
             'slug' => 'salary',
-            'name' => 'Salary'
+            'name' => 'Salario'
         ],
         [
             'slug' => 'attendence',
-            'name' => 'Attendence'
+            'name' => 'Asistencia'
         ],
         [
             'slug' => 'category',
-            'name' => 'Category'
+            'name' => 'Categoría'
         ],
         [
             'slug' => 'product',
-            'name' => 'Product'
+            'name' => 'Producto'
         ],
         [
             'slug' => 'orders',
-            'name' => 'Orders'
+            'name' => 'Órdenes'
         ],
         [
             'slug' => 'stock',
-            'name' => 'Stock'
+            'name' => 'Inventario'
         ],
         [
             'slug' => 'roles',
@@ -50,11 +50,11 @@
         ],
         [
             'slug' => 'user',
-            'name' => 'User'
+            'name' => 'Usuario'
         ],
         [
             'slug' => 'database',
-            'name' => 'Database'
+            'name' => 'Base de Datos'
         ],
     ]
 @endphp
@@ -65,7 +65,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">Edit Permission</h4>
+                        <h4 class="card-title">Editar Permiso</h4>
                     </div>
                 </div>
 
@@ -76,7 +76,7 @@
                         <!-- begin: Input Data -->
                         <div class=" row align-items-center">
                             <div class="form-group col-md-6">
-                                <label for="name">Permission Name <span class="text-danger">*</span></label>
+                                <label for="name">Nombre del Permiso <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $permission->name) }}" required autocomplete="off">
                                 @error('name')
                                 <div class="invalid-feedback">
@@ -86,9 +86,9 @@
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="group_name">Group Name <span class="text-danger">*</span></label>
+                                <label for="group_name">Nombre del Grupo <span class="text-danger">*</span></label>
                                 <select class="form-control @error('group_name') is-invalid @enderror" name="group_name" required>
-                                    <option disabled>-- Select Group --</option>
+                                    <option disabled>-- Seleccionar Grupo --</option>
                                     @foreach ($group_names as $item)
                                         <option value="{{ $item['slug'] }}" {{ $permission->group_name == $item['slug'] ? 'selected' : '' }}>{{ $item['name'] }}</option>
                                     @endforeach
@@ -102,8 +102,8 @@
                         </div>
                         <!-- end: Input Data -->
                         <div class="mt-2">
-                            <button type="submit" class="btn btn-primary mr-2">Save</button>
-                            <a class="btn bg-danger" href="{{ route('permission.index') }}">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">Guardar</button>
+                            <a class="btn bg-danger" href="{{ route('permission.index') }}">Cancelar</a>
                         </div>
                     </form>
                 </div>

@@ -14,7 +14,7 @@
             @endif
             @if (session()->has('error'))
                 <div class="alert text-white bg-danger" role="alert">
-                    <div class="iq-alert-text">{{ session('success') }}</div>
+                    <div class="iq-alert-text">{{ session('error') }}</div>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <i class="ri-close-line"></i>
                     </button>
@@ -22,14 +22,14 @@
             @endif
             <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                 <div>
-                    <h4 class="mb-3">Product List</h4>
-                    <p class="mb-0">A product dashboard lets you easily gather and visualize product data from optimizing <br>
-                        the product experience, ensuring product retention. </p>
+                    <h4 class="mb-3">Lista de Productos</h4>
+                    <p class="mb-0">Un panel de productos te permite recopilar y visualizar fácilmente datos de productos para optimizar <br>
+                        la experiencia del producto, asegurando la retención del mismo.</p>
                 </div>
                 <div>
-                <a href="{{ route('products.importView') }}" class="btn btn-success add-list">Import</a>
-                <a href="{{ route('products.exportData') }}" class="btn btn-warning add-list">Export</a>
-                <a href="{{ route('products.create') }}" class="btn btn-primary add-list">Add Product</a>
+                    <a href="{{ route('products.importView') }}" class="btn btn-success add-list">Importar</a>
+                    <a href="{{ route('products.exportData') }}" class="btn btn-warning add-list">Exportar</a>
+                    <a href="{{ route('products.create') }}" class="btn btn-primary add-list">Agregar Producto</a>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
             <form action="{{ route('products.index') }}" method="get">
                 <div class="d-flex flex-wrap align-items-center justify-content-between">
                     <div class="form-group row">
-                        <label for="row" class="col-sm-3 align-self-center">Row:</label>
+                        <label for="row" class="col-sm-3 align-self-center">Filas:</label>
                         <div class="col-sm-9">
                             <select class="form-control" name="row">
                                 <option value="10" @if(request('row') == '10')selected="selected"@endif>10</option>
@@ -50,9 +50,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="control-label col-sm-3 align-self-center" for="search">Search:</label>
+                        <label class="control-label col-sm-3 align-self-center" for="search">Buscar:</label>
                         <div class="input-group col-sm-8">
-                            <input type="text" id="search" class="form-control" name="search" placeholder="Search product" value="{{ request('search') }}">
+                            <input type="text" id="search" class="form-control" name="search" placeholder="Buscar producto" value="{{ request('search') }}">
                             <div class="input-group-append">
                                 <button type="submit" class="input-group-text bg-primary"><i class="fa-solid fa-magnifying-glass font-size-20"></i></button>
                                 <a href="{{ route('products.index') }}" class="input-group-text bg-danger"><i class="fa-solid fa-trash"></i></a>
@@ -69,13 +69,13 @@
                     <thead class="bg-white text-uppercase">
                         <tr class="ligth ligth-data">
                             <th>No.</th>
-                            <th>Photo</th>
-                            <th>@sortablelink('product_name', 'name')</th>
-                            <th>@sortablelink('category.name', 'category')</th>
-                            <th>@sortablelink('supplier.name', 'supplier')</th>
-                            <th>@sortablelink('selling_price', 'price')</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>Foto</th>
+                            <th>@sortablelink('product_name', 'Nombre')</th>
+                            <th>@sortablelink('category.name', 'Categoría')</th>
+                            <th>@sortablelink('supplier.name', 'Proveedor')</th>
+                            <th>@sortablelink('selling_price', 'Precio')</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody class="ligth-body">
@@ -91,9 +91,9 @@
                             <td>{{ $product->selling_price }}</td>
                             <td>
                                 @if ($product->expire_date > Carbon\Carbon::now()->format('Y-m-d'))
-                                    <span class="badge rounded-pill bg-success">Valid</span>
+                                    <span class="badge rounded-pill bg-success">Válido</span>
                                 @else
-                                    <span class="badge rounded-pill bg-danger">Invalid</span>
+                                    <span class="badge rounded-pill bg-danger">Inválido</span>
                                 @endif
                             </td>
                             <td>
@@ -101,11 +101,11 @@
                                     @method('delete')
                                     @csrf
                                     <div class="d-flex align-items-center list-action">
-                                        <a class="btn btn-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                        <a class="btn btn-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver"
                                             href="{{ route('products.show', $product->id) }}"><i class="ri-eye-line mr-0"></i>
                                         </a>
-                                        <a class="btn btn-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                            href="{{ route('products.edit', $product->id) }}""><i class="ri-pencil-line mr-0"></i>
+                                        <a class="btn btn-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar"
+                                            href="{{ route('products.edit', $product->id) }}"><i class="ri-pencil-line mr-0"></i>
                                         </a>
                                         <button type="submit" class="btn btn-warning mr-2 border-none"
                                         onclick="event.preventDefault(); swal({
@@ -127,7 +127,7 @@
 
                         @empty
                         <div class="alert text-white bg-danger" role="alert">
-                            <div class="iq-alert-text">Data not Found.</div>
+                            <div class="iq-alert-text">Datos no encontrados.</div>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <i class="ri-close-line"></i>
                             </button>
@@ -139,7 +139,7 @@
             {{ $products->links() }}
         </div>
     </div>
-    <!-- Page end  -->
+    <!-- Fin de la página -->
 </div>
 
 @endsection

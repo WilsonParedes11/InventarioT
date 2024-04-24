@@ -1,14 +1,14 @@
-<!-- begin: Edit Profile -->
+<!-- begin: Editar Perfil -->
 <div class="card-header d-flex justify-content-between">
     <div class="iq-header-title">
-        <h4 class="card-title">Edit Profile</h4>
+        <h4 class="card-title">Editar Perfil</h4>
     </div>
 </div>
 <div class="card-body">
     <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('put')
-        <!-- begin: Input Image -->
+        <!-- begin: Entrada de Imagen -->
         <div class="form-group row align-items-center">
             <div class="col-md-12">
                 <div class="profile-img-edit">
@@ -21,7 +21,7 @@
         <div class="input-group mb-4">
             <div class="custom-file">
                 <input type="file" class="custom-file-input @error('photo') is-invalid @enderror" id="image" name="photo" accept="image/*" onchange="previewImage();">
-                <label class="custom-file-label" for="photo">Choose file</label>
+                <label class="custom-file-label" for="photo">Seleccionar archivo</label>
             </div>
             @error('photo')
             <div class="invalid-feedback">
@@ -29,11 +29,11 @@
             </div>
             @enderror
         </div>
-        <!-- end: Input Image -->
-        <!-- begin: Input Data -->
+        <!-- end: Entrada de Imagen -->
+        <!-- begin: Datos de Entrada -->
         <div class=" row align-items-center">
             <div class="form-group col-md-12">
-                <label for="name">Full Name <span class="text-danger">*</span></label>
+                <label for="name">Nombre Completo <span class="text-danger">*</span></label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $user->name) }}" required>
                 @error('name')
                 <div class="invalid-feedback">
@@ -42,7 +42,7 @@
                 @enderror
             </div>
             <div class="form-group col-md-6">
-                <label for="username">Username <span class="text-danger">*</span></label>
+                <label for="username">Nombre de Usuario <span class="text-danger">*</span></label>
                 <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ old('username', $user->username) }}" required>
                 @error('username')
                 <div class="invalid-feedback">
@@ -51,7 +51,7 @@
                 @enderror
             </div>
             <div class="form-group col-md-6">
-                <label for="email">Email <span class="text-danger">*</span></label>
+                <label for="email">Correo Electrónico <span class="text-danger">*</span></label>
                 <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $user->email) }}" required>
                 @error('email')
                 <div class="invalid-feedback">
@@ -60,11 +60,11 @@
                 @enderror
             </div>
         </div>
-        <!-- end: Input Data -->
+        <!-- end: Datos de Entrada -->
         <div class="mt-2">
-            <button type="submit" class="btn btn-primary mr-2">Update</button>
-            <a class="btn bg-danger" href="{{ route('profile') }}">Cancel</a>
+            <button type="submit" class="btn btn-primary mr-2">Actualizar</button>
+            <a class="btn bg-danger" href="{{ route('profile') }}">Cancelar</a>
         </div>
     </form>
 </div>
-<!-- end: Edit Profile -->
+<!-- end: Editar Perfil -->
