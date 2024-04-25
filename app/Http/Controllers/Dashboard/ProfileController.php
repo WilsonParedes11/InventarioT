@@ -53,7 +53,7 @@ class ProfileController extends Controller
 
         $rules = [
             'name' => 'required|max:50',
-            'photo' => 'image|file|max:1024',
+            'photo' => 'image|file|max:2048',
             'email' => 'required|email|max:50|unique:users,email,'.$user->id,
             'username' => 'required|min:4|max:25|alpha_dash:ascii|unique:users,username,'.$user->id
         ];
@@ -77,7 +77,7 @@ class ProfileController extends Controller
 
         User::where('id', $user->id)->update($validatedData);
 
-        return Redirect::route('profile')->with('success', 'Profile has been updated!');
+        return Redirect::route('profile')->with('success', 'El perfil ha sido actualizado!');
     }
 
     /**

@@ -19,7 +19,7 @@ class PaySalaryController extends Controller
         $row = (int) request('row', 10);
 
         if ($row < 1 || $row > 100) {
-            abort(400, 'The row parameter must be an integer between 1 and 100.');
+            abort(400, 'El parámetro por página debe ser un número entero entre 1 y 100.');
         }
 
         if(request('search')){
@@ -53,7 +53,7 @@ class PaySalaryController extends Controller
         $row = (int) request('row', 10);
 
         if ($row < 1 || $row > 100) {
-            abort(400, 'The row parameter must be an integer between 1 and 100.');
+            abort(400, 'El parámetro por página debe ser un número entero entre 1 y 100.');
         }
 
         if(request('search')){
@@ -109,7 +109,7 @@ class PaySalaryController extends Controller
 
         PaySalary::create($validatedData);
 
-        return Redirect::route('pay-salary.payHistory')->with('success', 'Employee Salary Paid Successfully!');
+        return Redirect::route('pay-salary.payHistory')->with('success', 'Salario de los empleados pagado con éxito!');
     }
 
     /**
@@ -143,6 +143,6 @@ class PaySalaryController extends Controller
     {
         PaySalary::destroy($paySalary->id);
 
-        return Redirect::route('pay-salary.payHistory')->with('success', 'Employee History Pay Salary has been deleted!');
+        return Redirect::route('pay-salary.payHistory')->with('success', 'Se ha eliminado el historial de pago del salario del empleado!');
     }
 }

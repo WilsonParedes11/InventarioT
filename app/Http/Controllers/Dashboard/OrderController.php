@@ -24,7 +24,7 @@ class OrderController extends Controller
         $row = (int) request('row', 10);
 
         if ($row < 1 || $row > 100) {
-            abort(400, 'The per-page parameter must be an integer between 1 and 100.');
+            abort(400, 'El parámetro por página debe ser un número entero entre 1 y 100.');
         }
 
         $orders = Order::where('order_status', 'pending')->sortable()->paginate($row);
@@ -39,7 +39,7 @@ class OrderController extends Controller
         $row = (int) request('row', 10);
 
         if ($row < 1 || $row > 100) {
-            abort(400, 'The per-page parameter must be an integer between 1 and 100.');
+            abort(400, 'El parámetro por página debe ser un número entero entre 1 y 100.');
         }
 
         $orders = Order::where('order_status', 'complete')->sortable()->paginate($row);
@@ -54,7 +54,7 @@ class OrderController extends Controller
         $row = (int) request('row', 10);
 
         if ($row < 1 || $row > 100) {
-            abort(400, 'The per-page parameter must be an integer between 1 and 100.');
+            abort(400, 'El parámetro por página debe ser un número entero entre 1 y 100.');
         }
 
         return view('stock.index', [
@@ -116,7 +116,7 @@ class OrderController extends Controller
         // Delete Cart Sopping History
         Cart::destroy();
 
-        return Redirect::route('dashboard')->with('success', 'Order has been created!');
+        return Redirect::route('dashboard')->with('success', 'El pedido ha sido creado!');
     }
 
     /**
@@ -153,7 +153,7 @@ class OrderController extends Controller
 
         Order::findOrFail($order_id)->update(['order_status' => 'complete']);
 
-        return Redirect::route('order.pendingOrders')->with('success', 'Order has been completed!');
+        return Redirect::route('order.pendingOrders')->with('success', 'El pedido se ha completado!');
     }
 
     public function invoiceDownload(Int $order_id)
@@ -176,7 +176,7 @@ class OrderController extends Controller
         $row = (int) request('row', 10);
 
         if ($row < 1 || $row > 100) {
-            abort(400, 'The per-page parameter must be an integer between 1 and 100.');
+            abort(400, 'El parámetro por página debe ser un número entero entre 1 y 100.');
         }
 
         $orders = Order::where('due', '>', '0')
@@ -216,6 +216,6 @@ class OrderController extends Controller
             'pay' => $paid_pay,
         ]);
 
-        return Redirect::route('order.pendingDue')->with('success', 'Due Amount Updated Successfully!');
+        return Redirect::route('order.pendingDue')->with('success', 'Monto adeudado actualizado exitosamente!');
     }
 }

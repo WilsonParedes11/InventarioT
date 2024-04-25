@@ -19,7 +19,7 @@ class CustomerController extends Controller
         $row = (int) request('row', 10);
 
         if ($row < 1 || $row > 100) {
-            abort(400, 'The per-page parameter must be an integer between 1 and 100.');
+            abort(400, 'El parámetro por página debe ser un número entero entre 1 y 100.');
         }
 
         return view('customers.index', [
@@ -41,7 +41,7 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'photo' => 'image|file|max:1024',
+            'photo' => 'image|file|max:2048',
             'name' => 'required|string|max:50',
             'email' => 'required|email|max:50|unique:customers,email',
             'phone' => 'required|string|max:15|unique:customers,phone',
@@ -69,7 +69,7 @@ class CustomerController extends Controller
 
         Customer::create($validatedData);
 
-        return Redirect::route('customers.index')->with('success', 'Customer has been created!');
+        return Redirect::route('customers.index')->with('success', 'El cliente ha sido creado!');
     }
 
     /**
@@ -98,7 +98,7 @@ class CustomerController extends Controller
     public function update(Request $request, Customer $customer)
     {
         $rules = [
-            'photo' => 'image|file|max:1024',
+            'photo' => 'image|file|max:2048',
             'name' => 'required|string|max:50',
             'email' => 'required|email|max:50|unique:customers,email,'.$customer->id,
             'phone' => 'required|string|max:15|unique:customers,phone,'.$customer->id,
@@ -133,7 +133,7 @@ class CustomerController extends Controller
 
         Customer::where('id', $customer->id)->update($validatedData);
 
-        return Redirect::route('customers.index')->with('success', 'Customer has been updated!');
+        return Redirect::route('customers.index')->with('success', 'El cliente ha sido actualizado!');
     }
 
     /**
@@ -150,6 +150,6 @@ class CustomerController extends Controller
 
         Customer::destroy($customer->id);
 
-        return Redirect::route('customers.index')->with('success', 'Customer has been deleted!');
+        return Redirect::route('customers.index')->with('success', 'El cliente ha sido eliminado!');
     }
 }

@@ -18,7 +18,7 @@ class PosController extends Controller
         $row = (int) request('row', 10);
 
         if ($row < 1 || $row > 100) {
-            abort(400, 'The per-page parameter must be an integer between 1 and 100.');
+            abort(400, 'El parámetro por página debe ser un número entero entre 1 y 100.');
         }
 
         return view('pos.index', [
@@ -49,7 +49,7 @@ class PosController extends Controller
             'options' => ['size' => 'large']
         ]);
 
-        return Redirect::back()->with('success', 'Product has been added!');
+        return Redirect::back()->with('success', 'Se ha agregado producto!');
     }
 
     public function updateCart(Request $request, $rowId)
@@ -62,14 +62,14 @@ class PosController extends Controller
 
         Cart::update($rowId, $validatedData['qty']);
 
-        return Redirect::back()->with('success', 'Cart has been updated!');
+        return Redirect::back()->with('success', 'El carrito ha sido actualizado!');
     }
 
     public function deleteCart(String $rowId)
     {
         Cart::remove($rowId);
 
-        return Redirect::back()->with('success', 'Cart has been deleted!');
+        return Redirect::back()->with('success', 'El carrito ha sido eliminado!');
     }
 
     public function createInvoice(Request $request)

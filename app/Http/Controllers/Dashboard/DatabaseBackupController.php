@@ -20,7 +20,7 @@ class DatabaseBackupController extends Controller
     public function create(){
         \Artisan::call('backup:run');
 
-        return Redirect::route('backup.index')->with('success', 'Database Backup Successfully!');
+        return Redirect::route('backup.index')->with('success', 'Copia de seguridad de la base de datos exitosamente!');
     }
 
     public function download(String $getFileName)
@@ -34,6 +34,6 @@ class DatabaseBackupController extends Controller
     {
         Storage::delete('POS/' . $getFileName);
 
-        return Redirect::route('backup.index')->with('success', 'Database Deleted Successfully!');
+        return Redirect::route('backup.index')->with('success', 'Base de datos eliminada exitosamente!');
     }
 }

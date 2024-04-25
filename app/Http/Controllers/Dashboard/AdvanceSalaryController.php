@@ -19,7 +19,7 @@ class AdvanceSalaryController extends Controller
         $row = (int) request('row', 10);
 
         if ($row < 1 || $row > 100) {
-            abort(400, 'The per-page parameter must be an integer between 1 and 100.');
+            abort(400, 'El parámetro por página debe ser un número entero entre 1 y 100.');
         }
 
         if(request('search')){
@@ -73,9 +73,9 @@ class AdvanceSalaryController extends Controller
             $validatedData = $request->validate($rules);
             AdvanceSalary::create($validatedData);
 
-            return Redirect::route('advance-salary.create')->with('success', 'Advance Salary Paid Successfully!');
+            return Redirect::route('advance-salary.create')->with('success', 'Salario anticipado pagado con éxito!');
         } else {
-            return Redirect::route('advance-salary.create')->with('warning', 'Advance Salary Already Paid!');
+            return Redirect::route('advance-salary.create')->with('warning', 'Salario anticipado ya pagado!');
         }
     }
 
@@ -121,9 +121,9 @@ class AdvanceSalaryController extends Controller
             $validatedData = $request->validate($rules);
             AdvanceSalary::where('id', $advanceSalary->id)->update($validatedData);
 
-            return Redirect::route('advance-salary.edit', $advanceSalary->id)->with('success', 'Advance Salary Updated Successfully!');
+            return Redirect::route('advance-salary.edit', $advanceSalary->id)->with('success', 'Salario anticipado actualizado con éxito!');
         } else {
-            return Redirect::route('advance-salary.edit', $advanceSalary->id)->with('warning', 'Advance Salary Already Paid!');
+            return Redirect::route('advance-salary.edit', $advanceSalary->id)->with('warning', 'Salario anticipado ya pagado!');
         }
     }
 
@@ -134,6 +134,6 @@ class AdvanceSalaryController extends Controller
     {
         AdvanceSalary::destroy($advanceSalary->id);
 
-        return Redirect::route('advance-salary.index')->with('success', 'Advance Salary has been deleted!');
+        return Redirect::route('advance-salary.index')->with('success', 'Se ha eliminado el salario anticipado!');
     }
 }

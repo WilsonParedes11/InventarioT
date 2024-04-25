@@ -19,7 +19,7 @@ class EmployeeController extends Controller
         $row = (int) request('row', 10);
 
         if ($row < 1 || $row > 100) {
-            abort(400, 'The per-page parameter must be an integer between 1 and 100.');
+            abort(400, 'El parámetro por página debe ser un número entero entre 1 y 100.');
         }
 
         return view('employees.index', [
@@ -41,7 +41,7 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'photo' => 'image|file|max:1024',
+            'photo' => 'image|file|max:2048',
             'name' => 'required|string|max:50',
             'email' => 'required|email|max:50|unique:employees,email',
             'phone' => 'required|string|max:15|unique:employees,phone',
@@ -67,7 +67,7 @@ class EmployeeController extends Controller
 
         Employee::create($validatedData);
 
-        return Redirect::route('employees.index')->with('success', 'Employee has been created!');
+        return Redirect::route('employees.index')->with('success', 'Empleado ha sido creado!');
     }
 
     /**
@@ -129,7 +129,7 @@ class EmployeeController extends Controller
 
         Employee::where('id', $employee->id)->update($validatedData);
 
-        return Redirect::route('employees.index')->with('success', 'Employee has been updated!');
+        return Redirect::route('employees.index')->with('success', 'Empleado ha sido actualizado!');
     }
 
     /**
@@ -146,6 +146,6 @@ class EmployeeController extends Controller
 
         Employee::destroy($employee->id);
 
-        return Redirect::route('employees.index')->with('success', 'Employee has been deleted!');
+        return Redirect::route('employees.index')->with('success', 'Empleado ha sido eliminado!');
     }
 }

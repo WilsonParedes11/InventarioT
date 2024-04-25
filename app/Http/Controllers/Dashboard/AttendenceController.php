@@ -18,7 +18,7 @@ class AttendenceController extends Controller
         $row = (int) request('row', 10);
 
         if ($row < 1 || $row > 100) {
-            abort(400, 'The per-page parameter must be an integer between 1 and 100.');
+            abort(400, 'El parámetro por página debe ser un número entero entre 1 y 100.');
         }
 
         return view('attendence.index', [
@@ -67,7 +67,7 @@ class AttendenceController extends Controller
             $attend->save();
         }
 
-        return Redirect::route('attendence.index')->with('success', 'Attendence has been Created!');
+        return Redirect::route('attendence.index')->with('success', 'Se ha creado la asistencia!');
     }
 
     /**

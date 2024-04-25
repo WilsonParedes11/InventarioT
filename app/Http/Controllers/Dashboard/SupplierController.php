@@ -19,7 +19,7 @@ class SupplierController extends Controller
         $row = (int) request('row', 10);
 
         if ($row < 1 || $row > 100) {
-            abort(400, 'The per-page parameter must be an integer between 1 and 100.');
+            abort(400, 'El parámetro por página debe ser un número entero entre 1 y 100.');
         }
 
         return view('suppliers.index', [
@@ -42,7 +42,7 @@ class SupplierController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'photo' => 'image|file|max:1024',
+            'photo' => 'image|file|max:2048',
             'name' => 'required|string|max:50',
             'email' => 'required|email|max:50|unique:suppliers,email',
             'phone' => 'required|string|max:15|unique:suppliers,phone',
@@ -71,7 +71,7 @@ class SupplierController extends Controller
 
         Supplier::create($validatedData);
 
-        return Redirect::route('suppliers.index')->with('success', 'Supplier has been created!');
+        return Redirect::route('suppliers.index')->with('success', 'Se ha creado el proveedor!');
     }
 
     /**
@@ -136,7 +136,7 @@ class SupplierController extends Controller
 
         Supplier::where('id', $supplier->id)->update($validatedData);
 
-        return Redirect::route('suppliers.index')->with('success', 'Supplier has been updated!');
+        return Redirect::route('suppliers.index')->with('success', 'El proveedor ha sido actualizado!');
     }
 
     /**
@@ -153,6 +153,6 @@ class SupplierController extends Controller
 
         Supplier::destroy($supplier->id);
 
-        return Redirect::route('suppliers.index')->with('success', 'Supplier has been deleted!');
+        return Redirect::route('suppliers.index')->with('success', 'El proveedor ha sido eliminado!');
     }
 }
