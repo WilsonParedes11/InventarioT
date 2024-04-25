@@ -51,7 +51,7 @@
                     <thead class="bg-white text-uppercase">
                         <tr class="ligth ligth-data">
                             <th>No.</th>
-                            <th>@sortablelink('date')</th>
+                            <th>@sortablelink('date','fecha')</th>
                             <th>Acción</th>
                         </tr>
                     </thead>

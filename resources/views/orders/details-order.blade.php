@@ -101,10 +101,9 @@
                         <tr>
                             <td>{{ $loop->iteration  }}</td>
                             <td>
-                                <img class="avatar-60 rounded" src="{{ $item->product->product_image ? asset('storage/products/'.$item->product_image) : asset('storage/products/default.webp') }}">
-                            </td>
-                            <td>{{ $item->product->product_name }}</td>
-                            <td>{{ $item->product->product_code }}</td>
+                                <img class="avatar-60 rounded" src="{{ $item->product && $item->product->product_image ? asset('storage/products/'.$item->product->product_image) : asset('storage/products/default.webp') }}">                            </td>
+                                <td>{{ $item->product ? $item->product->product_name : 'Producto no disponible' }}</td>
+                                <td>{{ $item->product ? $item->product->product_code : 'Código no disponible' }}</td>
                             <td>{{ $item->quantity }}</td>
                             <td>{{ $item->unitcost }}</td>
                             <td>{{ $item->total }}</td>

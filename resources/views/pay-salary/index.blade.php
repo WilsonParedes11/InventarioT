@@ -62,7 +62,7 @@
                             <th>No.</th>
                             <th>Foto</th>
                             <th>@sortablelink('employee.name', 'nombre')</th>
-                            <th>@sortablelink('date')</th>
+                            <th>@sortablelink('date','fecha')</th>
                             <th>@sortablelink('employee.salary', 'salario')</th>
                             <th>@sortablelink('advance_salary', 'anticipo salario')</th>
                             <th>Debido</th>
