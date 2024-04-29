@@ -97,30 +97,27 @@
                                 @endif
                             </td>
                             <td>
+                                {{-- <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="margin-bottom: 5px">
+                                    @method('delete')
+                                    @csrf
+                                    <div class="d-flex align-items-center list-action">
+                                        <a class="btn btn-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                            href="{{ route('products.show', $product->id) }}"><i class="ri-eye-line mr-0"></i>
+                                        </a>
+                                        <a class="btn btn-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
+                                            href="{{ route('products.edit', $product->id) }}""><i class="ri-pencil-line mr-0"></i>
+                                        </a>
+                                            <button type="submit" class="btn btn-warning mr-2 border-none" onclick="return confirm('Are you sure you want to delete this record?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ri-delete-bin-line mr-0"></i></button>
+                                    </div>
+                                </form> --}}
                                 <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="margin-bottom: 5px">
                                     @method('delete')
                                     @csrf
                                     <div class="d-flex align-items-center list-action">
-                                        <a class="btn btn-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver"
-                                            href="{{ route('products.show', $product->id) }}"><i class="ri-eye-line mr-0"></i>
-                                        </a>
-                                        <a class="btn btn-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar"
-                                            href="{{ route('products.edit', $product->id) }}"><i class="ri-pencil-line mr-0"></i>
-                                        </a>
-                                        <button type="submit" class="btn btn-warning mr-2 border-none"
-                                        onclick="event.preventDefault(); swal({
-                                            title: '¿Está seguro de que desea eliminar este registro?',
-                                            icon: 'warning',
-                                            buttons: true,
-                                            dangerMode: true
-                                        }).then((willDelete) => {
-                                            if (willDelete) {
-                                                document.querySelector('form').submit(); // Utiliza querySelector para encontrar el formulario
-                                            }
-                                        });"
-                                        data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar">
-                                    <i class="ri-delete-bin-line mr-0"></i>
-                                </button>                                    </div>
+                                        <a class="btn btn-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="{{ route('products.show', $product->id) }}"><i class="ri-eye-line mr-0"></i></a>
+                                        <a class="btn btn-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="{{ route('products.edit', $product->id) }}"><i class="ri-pencil-line mr-0"></i></a>
+                                        <button type="submit" class="btn btn-warning mr-2 border-none" onclick="showDeleteConfirmation(event)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ri-delete-bin-line mr-0"></i></button>
+                                    </div>
                                 </form>
                             </td>
                         </tr>
@@ -143,3 +140,25 @@
 </div>
 
 @endsection
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function showDeleteConfirmation(event) {
+        event.preventDefault(); // Evita que el formulario se envíe inmediatamente
+
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: 'Esta acción no se puede deshacer',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Si el usuario confirma, envía el formulario
+                event.target.closest('form').submit();
+            }
+        });
+    }
+</script>
